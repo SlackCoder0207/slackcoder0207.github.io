@@ -2333,7 +2333,7 @@ ul.breadcrumb li + li:last-child {
   }
 }
 .site-brand-container {
-  background: url("/images/site-brand-background.jpg");
+  background: url("/images/bg.jpg");
   background-size: cover;
 }
 @media (max-width: 991px) {
