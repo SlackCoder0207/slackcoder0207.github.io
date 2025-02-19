@@ -20,17 +20,23 @@
     var CONFIG = {"hostname":"willchen0207.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="Be true.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="SlackCoder&#39;s blog">
-<meta property="og:url" content="https://willchen0207.github.io/archives/2025/02/index.html">
+  <meta name="description" content="今天开始随缘记录重现毕设的工作与遇到的一些坑。项目名称是Twilight，旨在使用SpringBoot+Neo4j实现个性化学习资源的推荐。   今日遇到的坑1. Neo4j无法使用GDS一开始显示无法调用GDS的procedure（如gds.graphSage.train)，初步检查的时候以为是自己调用方法错了，后来通过检查和问GPT得到以下原因:  数据库未启用Neo4j GDS。这个是第一">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Twilight项目开发日记（1）">
+<meta property="og:url" content="https://willchen0207.github.io/2025/02/19/Twilight%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B0%EF%BC%881%EF%BC%89/index.html">
 <meta property="og:site_name" content="SlackCoder&#39;s blog">
-<meta property="og:description" content="Be true.">
+<meta property="og:description" content="今天开始随缘记录重现毕设的工作与遇到的一些坑。项目名称是Twilight，旨在使用SpringBoot+Neo4j实现个性化学习资源的推荐。   今日遇到的坑1. Neo4j无法使用GDS一开始显示无法调用GDS的procedure（如gds.graphSage.train)，初步检查的时候以为是自己调用方法错了，后来通过检查和问GPT得到以下原因:  数据库未启用Neo4j GDS。这个是第一">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-02-19T21:46:44.000Z">
+<meta property="article:modified_time" content="2025-02-19T22:20:11.836Z">
 <meta property="article:author" content="SlackCoder">
+<meta property="article:tag" content="Twilight">
+<meta property="article:tag" content="Neo4j">
+<meta property="article:tag" content="Java">
+<meta property="article:tag" content="JWT">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://willchen0207.github.io/archives/2025/02/">
+<link rel="canonical" href="https://willchen0207.github.io/2025/02/19/Twilight%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B0%EF%BC%881%EF%BC%89/">
 
 
 <script id="page-configurations">
@@ -38,12 +44,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>归档 | SlackCoder's blog</title>
+  <title>Twilight项目开发日记（1） | SlackCoder's blog</title>
   
 
 
@@ -184,90 +190,105 @@
         <div class="content-wrap">
           
 
-          <div class="content archive">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <span class="collection-header">嗯..! 目前共计 3 篇日志。 继续努力。</span>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://willchen0207.github.io/2025/02/19/Twilight%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B0%EF%BC%881%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.JPG">
+      <meta itemprop="name" content="SlackCoder">
+      <meta itemprop="description" content="Be true.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="SlackCoder's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Twilight项目开发日记（1）
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2025-02-19 21:46:44 / 修改时间：22:20:11" itemprop="dateCreated datePublished" datetime="2025-02-19T21:46:44+00:00">2025-02-19</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2025</span>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2025-02-19T21:46:44+00:00"
-              content="2025-02-19">
-          02-19
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2025/02/19/Twilight%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B0%EF%BC%881%EF%BC%89/" itemprop="url">
-            <span itemprop="name">Twilight项目开发日记（1）</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2025-02-17T22:57:00+00:00"
-              content="2025-02-17">
-          02-17
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2025/02/17/%E6%B1%82%E8%81%8C%E6%97%A5%E8%AE%B0/" itemprop="url">
-            <span itemprop="name">求职日记</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2025-02-16T23:37:00+00:00"
-              content="2025-02-16">
-          02-16
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2025/02/16/hello-world/" itemprop="url">
-            <span itemprop="name">技术博客启程</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
+        <blockquote>
+<p>今天开始随缘记录重现毕设的工作与遇到的一些坑。<br>项目名称是Twilight，旨在使用<strong>SpringBoot+Neo4j</strong>实现个性化学习资源的推荐。</p>
+</blockquote>
+<hr>
+<h2 id="今日遇到的坑"><a href="#今日遇到的坑" class="headerlink" title="今日遇到的坑"></a>今日遇到的坑</h2><h3 id="1-Neo4j无法使用GDS"><a href="#1-Neo4j无法使用GDS" class="headerlink" title="1. Neo4j无法使用GDS"></a>1. Neo4j无法使用GDS</h3><p>一开始显示无法调用GDS的procedure（如<code>gds.graphSage.train</code>)，初步检查的时候以为是自己调用方法错了，后来通过检查和问GPT得到以下原因:</p>
+<ol>
+<li>数据库未启用Neo4j GDS。这个是第一次运行时最常见的问题，需要在Neo4j Desktop右侧直接勾选install就行。</li>
+<li>Neo4j GDS的版本不支持使用这些功能。依旧以这个train方法为例，我使用的Neo4j GDS 2.13.2版本不支持，因为它是一个高级功能而非正式API，需要使用<code>GDS Enterprise</code>版本。<br>根据建议，我使用了FastRP替代GraphSAGE进行近似GNN训练。</li>
+</ol>
+<h3 id="2-SpringBoot项目编译时报错：Java：找不到符号"><a href="#2-SpringBoot项目编译时报错：Java：找不到符号" class="headerlink" title="2. SpringBoot项目编译时报错：Java：找不到符号"></a>2. SpringBoot项目编译时报错：<code>Java：找不到符号</code></h3><p>这是卡了我最久也是最不应该的问题。因为没有遇到过，所以先去搜了一下，网上教程总结下来无外乎这些方法：<a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/2100014">传送门</a>，但很不幸都没奏效。</p>
+<p>后来我注意到所有涉及到Model层类Get&#x2F;Set方法的语句都报了这个错，说明大概率就是Model类的定义出了问题。 通过注释掉@Data、@Getter、@Setter这些Lombok的注解(Annotation)再手写方法对比发现，确实是Lombok的锅。<br>于是从Lombok是否禁用、Lombok版本是否兼容等方面进行检查，最后通过调整Maven配置文件内容解决。</p>
+<h3 id="3-JWT密钥长度问题"><a href="#3-JWT密钥长度问题" class="headerlink" title="3. JWT密钥长度问题"></a>3. JWT密钥长度问题</h3><p>JWT说实话在此之前了解程度不深，所以踩了一些坑。</p>
+<p>首先来看报错：<br><code>io.jsonwebtoken.security.WeakKeyException: The specified key byte array is 80 bits which is not secure enough for any JWT HMAC-SHA algorithm.</code></p>
+<p>按照字面意思，发现应该是密钥部分有些问题，向GPT提问也得到了肯定，直接原因是：JWT密钥长度不足256位导致JWT工具类无法实例化，因此利用JWT实现过滤的过滤器依赖注入失败导致SpringBoot启动失败。</p>
+<p>因此解决方案也很简单：手动编写或者自动生成一个256位的密钥。此处选择使用<code>Keys.secretKeyFor(SignatureAlgorithm.HS256)</code>生成一个密钥，顺利解决问题。</p>
+<p>此外GPT在回答时提供了一个其他的方案，就是在application.properties配置文件里添加JWT配置，然后使用@Value读取。</p>
+<hr>
+<h2 id="今日进度："><a href="#今日进度：" class="headerlink" title="!!今日进度："></a>!!今日进度：</h2><ol>
+<li>编写了与User、Resource等主体相关的Model、Repository、Service、Controller的部分代码；</li>
+<li>实现了JWT+Spring Security进行的鉴权；</li>
+<li>已编写Redis和Neo4j的相关代码，包括借助Redis Stream和@Scheduled实现异步更新和缓存清理；</li>
+<li>完成Neo4j数据库内部的简单初始化。</li>
+</ol>
 
     </div>
-  </div>
-  
-  
-  
 
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Twilight/" rel="tag"># Twilight</a>
+              <a href="/tags/Neo4j/" rel="tag"># Neo4j</a>
+              <a href="/tags/Java/" rel="tag"># Java</a>
+              <a href="/tags/JWT/" rel="tag"># JWT</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2025/02/17/%E6%B1%82%E8%81%8C%E6%97%A5%E8%AE%B0/" rel="prev" title="求职日记">
+      <i class="fa fa-chevron-left"></i> 求职日记
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
   
 
 
@@ -320,6 +341,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%8A%E6%97%A5%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91"><span class="nav-number">1.</span> <span class="nav-text">今日遇到的坑</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Neo4j%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8GDS"><span class="nav-number">1.1.</span> <span class="nav-text">1. Neo4j无法使用GDS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-SpringBoot%E9%A1%B9%E7%9B%AE%E7%BC%96%E8%AF%91%E6%97%B6%E6%8A%A5%E9%94%99%EF%BC%9AJava%EF%BC%9A%E6%89%BE%E4%B8%8D%E5%88%B0%E7%AC%A6%E5%8F%B7"><span class="nav-number">1.2.</span> <span class="nav-text">2. SpringBoot项目编译时报错：Java：找不到符号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-JWT%E5%AF%86%E9%92%A5%E9%95%BF%E5%BA%A6%E9%97%AE%E9%A2%98"><span class="nav-number">1.3.</span> <span class="nav-text">3. JWT密钥长度问题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%8A%E6%97%A5%E8%BF%9B%E5%BA%A6%EF%BC%9A"><span class="nav-number">2.</span> <span class="nav-text">!!今日进度：</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
