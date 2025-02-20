@@ -80,7 +80,7 @@
 <p>另外很值得注意的一点是：<strong>Docker和虚拟机有什么区别？</strong></p>
 <p>首先明确一点，<strong>Docker≠虚拟机</strong>，毕竟Docker最常用的宣传语就是“虚拟机需要数分钟启动，而Docker容器只需要数十毫秒。”</p>
 <p>从区别上来看，虚拟机需要在主操作系统之上运行多个从操作系统，且虚拟机会占用大量的磁盘空间、CPU与内存，实现<strong>对硬件资源的虚拟化</strong>；与之相对，Docker<strong>无需运行臃肿的客户机操作系统</strong>，Docker使用Docker守护进程（Docker Daemon）实现对容器的管理，依赖的加载以<code>镜像</code>的形式打包，容器则基于镜像生成，<strong>直接使用硬件资源</strong>。</p>
-<p>两者的实现原理框架示意图如下：<br><img src="/images/Docker%E5%8E%9F%E7%90%86%E7%A4%BA%E6%84%8F.webp" alt="Docker原理示意"><br><img src="/images/VM%E5%8E%9F%E7%90%86%E7%A4%BA%E6%84%8F.webp" alt="VM原理示意"></p>
+<p>两者的实现原理框架示意图如下：<br><img src="/images/Docker-Structure.webp" alt="Docker原理示意"><br><img src="/images/VM-Structure.webp" alt="VM原理示意"></p>
 <p>除此之外，一些简单的介绍我阅读了这篇文章：<a href="https://www.zhihu.com/question/458020679">docker技术有什么用？</a></p>
 <p>现在提一嘴如何使用Docker来管理Redis、Neo4j。</p>
 <p>首先<a href="https://www.docker.com/">下载Docker</a>，安装好Docker Desktop之后需要重启。</p>
