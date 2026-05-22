@@ -31,7 +31,8 @@
       "Bash(curl -s -o /dev/null -w \"HTTP %{http_code}\" --connect-timeout 10 \"https://monster-siren.hypergryph.com/api/albums\")",
       "Bash(curl -s --connect-timeout 10 \"https://monster-siren.hypergryph.com/api/albums\" -H \"User-Agent: Mozilla/5.0\")",
       "Bash(echo \"---EXIT:$?\")",
-      "Bash(curl -sv --connect-timeout 10 \"https://monster-siren.hypergryph.com/api/albums\")"
+      "Bash(curl -sv --connect-timeout 10 \"https://monster-siren.hypergryph.com/api/albums\")",
+      "Bash(/tmp/rustup-init.exe -y --default-host x86_64-pc-windows-msvc --default-toolchain stable)"
     ]
   }
 }

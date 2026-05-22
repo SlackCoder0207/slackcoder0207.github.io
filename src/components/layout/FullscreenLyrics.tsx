@@ -71,6 +71,14 @@ export function FullscreenLyrics() {
     if (status !== 'playing' && !video.paused) video.pause();
   }, [mvMode, currentTime, status]);
 
+  // ── MV: update src on song change (no key remount) ──
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video || !mvMode) return;
+    // Force reload on song change to get fresh timeline
+    video.load();
+  }, [currentSong?.id, mvMode]);
+
   // ── MV re-entry: when seeking back before video end, re-enter MV ──
   useEffect(() => {
     if (mvMode) {
@@ -335,14 +343,12 @@ export function FullscreenLyrics() {
             transition={{ duration: 0.3, delay: 0.15 }}
             onMouseEnter={handleMvMouseMove}
             onMouseLeave={() => { setMvHover(false); setShowProgress(false); }}>
-            {/* Video player — key forces re-mount on song change for auto-next */}
-            <video ref={videoRef} key={currentSong?.id ?? 'mv'} className="absolute inset-0 w-full h-full object-cover"
-              src="/Running%20in%20The%20Dark.mp4" muted playsInline
+            {/* Video — memoized, preloaded, brightness filter instead of overlay div */}
+            <video ref={videoRef} className="absolute inset-0 w-full h-full object-cover"
+              src="/Running%20in%20The%20Dark.mp4" muted playsInline preload="auto"
+              style={{ filter: 'brightness(0.7)' }}
               onEnded={() => { videoEndThreshold.current = currentTime; setMvMode(false); }}
               onTimeUpdate={() => { /* keep in sync with player */ }} />
-
-            {/* Dark overlay */}
-            <div className="absolute inset-0" style={{ background: 'rgba(0,0,0,0.3)' }} />
 
             {/* Glass card — bottom-left, auto-hide on inactivity */}
             <motion.div className="absolute bottom-6 left-6 flex items-center gap-4 cursor-pointer rounded-lg overflow-hidden"
