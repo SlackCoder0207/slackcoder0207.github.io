@@ -1,0 +1,153 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===== Clinical Archive (light) — default ===== */
+:root {
+  --bg-primary: #f2f0e8;
+  --bg-secondary: #e4e8e9;
+  --text-primary: #2e3135;
+  --text-secondary: #70757a;
+  --accent: #002fa7;
+  --highlight: #f2c94c;
+  --border: #d0d4d7;
+  --bevel-size: 6px;
+  --font-ui: 'Microsoft YaHei', '微软雅黑', 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --noise-opacity: 0.035;
+  --glow-color: rgba(0, 47, 167, 0.12);
+  --glass-bg: rgba(255, 255, 255, 0.08);
+}
+
+/* ===== Deconstruction Complex (dark) ===== */
+[data-theme='deconstruction'] {
+  --bg-primary: #0c0c0c;
+  --bg-secondary: #151515;
+  --text-primary: #f2f2f2;
+  --text-secondary: #8b8b8b;
+  --accent: #4caf50;
+  --highlight: #f2c94c;
+  --border: #2a2a2a;
+  --bevel-size: 6px;
+  --font-ui: 'Microsoft YaHei', '微软雅黑', 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --noise-opacity: 0.06;
+  --glow-color: rgba(76, 175, 80, 0.15);
+  --glass-bg: rgba(255, 255, 255, 0.04);
+}
+
+/* ===== Global resets ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+body {
+  font-family: var(--font-ui);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--text-primary);
+  background: var(--bg-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background 300ms, color 300ms;
+}
+
+/* ===== Scrollbar ===== */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}
+
+/* ===== Hide scrollbar (keep functionality) ===== */
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ===== Selection ===== */
+::selection {
+  background: var(--accent);
+  color: var(--bg-primary);
+}
+
+/* ===== Utility: bevel clip path mixin ===== */
+@layer components {
+  .bevel {
+    clip-path: polygon(
+      var(--bevel-size) 0%,
+      calc(100% - var(--bevel-size)) 0%,
+      100% var(--bevel-size),
+      100% calc(100% - var(--bevel-size)),
+      calc(100% - var(--bevel-size)) 100%,
+      var(--bevel-size) 100%,
+      0% calc(100% - var(--bevel-size)),
+      0% var(--bevel-size)
+    );
+  }
+
+  .bevel-sm {
+    clip-path: polygon(
+      4px 0%,
+      calc(100% - 4px) 0%,
+      100% 4px,
+      100% calc(100% - 4px),
+      calc(100% - 4px) 100%,
+      4px 100%,
+      0% calc(100% - 4px),
+      0% 4px
+    );
+  }
+
+  .border-bevel {
+    position: relative;
+  }
+  .border-bevel::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    border: 1px solid var(--border);
+    clip-path: polygon(
+      var(--bevel-size) 0%,
+      calc(100% - var(--bevel-size)) 0%,
+      100% var(--bevel-size),
+      100% calc(100% - var(--bevel-size)),
+      calc(100% - var(--bevel-size)) 100%,
+      var(--bevel-size) 100%,
+      0% calc(100% - var(--bevel-size)),
+      0% var(--bevel-size)
+    );
+  }
+
+  /* System text style */
+  .system-text {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+  }
+}
